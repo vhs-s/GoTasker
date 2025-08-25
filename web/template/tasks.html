@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+<body>
+    <form action="">
+        <button>Выполнить задачи</button>
+    </form>
+    <form action="/index" method="GET">
+        <button>На главную</button>
+    </form>
+    <ul>
+        {{range .}}
+            <li>Название: {{.Name}}, Время выполнения: {{.DelaySec}}, Сообщение: {{.Message}}, Статус: {{.Status}}</li>
+        {{else}}
+            <li>Нет задач</li>
+        {{end}}
+    </ul>
+</body>
+</html>

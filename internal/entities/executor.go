@@ -7,12 +7,12 @@ import (
 
 type SimpleExecutor struct{}
 
-func New() *SimpleExecutor {
+func NewSimpleExec() *SimpleExecutor {
 	return &SimpleExecutor{}
 }
 
 func (se *SimpleExecutor) Execute(task *Task) {
-	fmt.Printf("TASK %d started: %s\n", task.Id, task.Message)
+	fmt.Printf("TASK %s started: %s\n", task.Id, task.Message)
 	time.Sleep(time.Duration(task.DelaySec) * time.Second)
-	fmt.Printf("TASK %d done\n", task.Id)
+	fmt.Printf("TASK %s done\n", task.Id)
 }
